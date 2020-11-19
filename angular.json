@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ProyectoIMC"
+    }
+  },
+  "defaultProject": "ProyectoIMC",
+  "cli": {
+    "analytics": "94f8471d-103b-4de5-9abb-47e45f81f1c2"
+  }
 }
