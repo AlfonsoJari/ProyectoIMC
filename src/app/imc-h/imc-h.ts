@@ -1,3 +1,6 @@
 export function imc(peso,altura) {  
-    return (peso/((altura*.01)*(altura*.01)));
+        // refactoring
+        let imc = 0;
+        imc = peso/Math.pow(altura*.01,2);
+        return imc;
 }
