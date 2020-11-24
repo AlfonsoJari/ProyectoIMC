@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculadora IMC</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="./ui.component.css">
+</head>
+
+<body>
+    <br>
+    <div class="container">
+        <label for="label">Calculadora de IMC</label>
+    </div>
+
+    <div class="container">
+        <label for="label">Hombre:</label>
+        <label class="switch">
+            <input type="checkbox" (click)="cambioH()" id="switchH" [(ngModel)]="hombre" >
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <div class="container">
+        <label for="label">Mujer:</label>
+        <label class="switch">
+            <input type="checkbox" (click)="cambioM()" id="switchM" [(ngModel)]="mujer">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <div class="container">
+        <label for="edad">Edad: </label>
+        <input type="edad" name="edad" id="edad" [(ngModel)]="edad" placeholder=""/>
+    </div>
+
+    <div class="container">
+        <label for="altura">Altura(cm): </label>
+        <input type="altura" name="altura" id="altura" [(ngModel)]="altura" placeholder=""/>
+    </div>
+
+    <div class="container">
+        <label for="peso">Peso(kg): </label>
+        <input type="peso" name="peso" id="peso" [(ngModel)]="peso" placeholder=""/>
+    </div>
+
+    <div class="container">
+        <a class="boton_personalizado" (click)="calculos()" href="#openModal">Calcular</a>
+    </div>
+
+    <div id="openModal" class="modalDialog"> 
+        <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <h2>Resultados IMC</h2>
+            <p>Fecha: <span class="diaActual">{{ diaActual }}</span></p>
+            <p>-----------------------------------------------------------------------</p>
+            <p>PESO: <span class="peso">{{ peso }}</span></p>
+            <p>ALTURA: <span class="altura">{{ altura }}</span></p>
+            <p>EDAD: <span class="edad">{{ edad }}</span></p>
+            <p>-----------------------------------------------------------------------</p>
+            <p>IMC: <span class="imcLocal">{{ imcLocal }}</span></p>
+            <p>Indice de Masa Corporal: Peso(kg)/Altura(m)2</p>
+            <p>Tu estado es: <span class="clasificacion">{{ clasificacion }}</span></p>
+            <img class="logo" src="../../assets/img/TablaSEEDO.png" alt="TablaSEEDO">
+            <p>PI: <span class="pi">{{ pi }}</span></p>
+            <p>Peso Ideal: Hombre: Altura(cm) - 150 x 0,75 + 50</p>
+            <p>Mujer: Altura(cm) - 150 x 0,6 + 50</p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
