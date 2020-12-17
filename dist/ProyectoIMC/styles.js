@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\alfon\Documents\PruebasSoft\ProyectoIMC\src\styles.css */"OmL/");
+module.exports = __webpack_require__(/*! /home/alexi/Escritorio/ProyectoIMC/src/styles.css */"OmL/");
 
 
 /***/ }),
