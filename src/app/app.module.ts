@@ -7,12 +7,16 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { StorageService } from './services/storage.service';
+import { SignupComponent } from './signup/signup.component';
+import { SessionbarComponent } from './sessionbar/sessionbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UiComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent,
+    SessionbarComponent
   ],
   imports: [
     BrowserModule,

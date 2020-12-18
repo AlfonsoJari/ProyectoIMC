@@ -3,8 +3,9 @@ export class  StorageService {
     constructor(){}
 
     getApiUrl(){
-      return   'http://104.198.244.0:5018'
-      //return   'http://201.147.64.84:8083' 
+      //return   'http://localhost:8080'
+      //return   'http://34.68.87.191:5018'
+      return   'https://api-imc-alexi.herokuapp.com' 
 
     }
 
