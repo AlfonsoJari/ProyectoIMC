@@ -30,13 +30,13 @@ export class UiComponent implements OnInit {
   }
 
   cambioH(){
-    if(this.mujer=true){
+    if(this.mujer){
       this.mujer=false;
-    } 
+    }
   }
 
   cambioM(){
-    if(this.hombre=true){
+    if(this.hombre){
       this.hombre=false;
     }
   }

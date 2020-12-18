@@ -53,6 +53,38 @@ describe('ui unit tests:', () => {
 
   });
 
+  it('Should call cambioH method', () => {
+
+    // Arrange
+    component.hombre = false;
+    component.mujer = true;
+
+    // Act
+    component.cambioH();
+    component.cambioH();
+
+    // Assert
+    expect(component.mujer).toBe(false);
+
+  });
+
+
+  it('Should call cambioM method', () => {
+
+    // Arrange
+    component.hombre = true;
+    component.mujer = false;
+
+    // Act
+    component.cambioM();
+    component.cambioM();
+
+    // Assert
+    expect(component.mujer).toBe(false);
+    
+
+  });
+
   it('Should call piH method', () => {
 
     // Arrange

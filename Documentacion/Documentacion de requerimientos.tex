@@ -1,0 +1,155 @@
+
+\documentclass{article}
+\usepackage{graphicx}
+% Esto es para poder escribir acentos directamente:
+\usepackage[latin1]{inputenc}
+% Esto es para que el LaTeX sepa que el texto está en español:
+\usepackage[spanish]{babel}
+% Paquetes de la AMS:
+\usepackage{amsmath, amsthm, amsfonts}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry} 
+
+
+\usepackage{graphicx}
+
+\def\RR{\mathbb{R}}
+\def\ZZ{\mathbb{Z}}
+
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+
+\DeclareMathOperator{\Jac}{Jac}
+\title{DOCUMENTACION DE REQUERIMIENTOS}
+\author{ALEXI RAMIREZ RUIZ , ALFONSO JARI MAYA HERNANDEZ\\
+
+	\\
+  \LARGE Universidad Veracruzana\\
+  
+  \\
+  
+  \LARGE Ingeniería de Software\\
+  
+  \\  
+  
+  \LARGE Pruebas de Software\\
+    
+  \\
+  
+  \LARGE Adolfo Centeno Téllez\\  
+  
+  
+
+}
+\begin{document}
+\maketitle
+\newpage
+
+\title 
+\Huge{INDICE GENERAL} 
+\large \\
+
+
+ 1 INTRODUCCION...............3\\
+
+
+ 1.1 PROPOSITO...................3\\
+
+
+ 2 REQUERIMIENTOS FUNCIONALES.................3\\
+
+
+ 2.1 FUNCIONALIDAD DEL SISTEMA................3\\
+
+
+ 3 REQUISITOS NO FUNCIONALES.......................4\\
+
+
+ 3.1 DESCRIPCION DE REQUERIMIENTOS NO FUNCIONALES...............4\\
+
+
+ 3.2 INTERFAZ DEL SISTEMA..............5\\
+ 
+
+
+\section{INTRODUCCION}
+\vspace{0.7 cm}
+\Large Esta calculadora tiene como propósito el darles a los usuarios información de su Índice de Masa Corporal (IMC) para tener conocimiento de su estado de salud y en qué sección de peso se encuentra la persona.\\
+ 
+ 
+\subsection{REQUISITOS FUNCIONALES}\label{sec:nada}
+\begin{verse}
+\vspace{0.5 cm}
+\LARGE 2.1 Descripcion de requerimientos no funcionales\\
+
+*	Descripción de los datos a ser ingresados en el sistema.\\
+*	Se deben hacer las operaciones del peso y altura.\\
+*	Muestra de la tabla con la descripción del peso, edad altura y el IMC.\\
+*	El sistema puede ser utilizado en cualquier navegador.\\
+*	El sistema muestra opciones para los usuarios tanto para hombre como para mujer.\\
+*	El sistema proporciona datos seguros.\\
+
+
+\end{verse}
+
+\subsubsection{REQUISITOS NO FUNCIONALES}\label{sec:nada2}
+  
+\begin{verse}
+\Large 3.1 Descripción de requerimientos Funcionales\\
+* El programa será desarrollado en angular 5 usando los lenguajes JavaScript HTML.\\
+* Muestra de tabla de SEEDO\\
+* El programa funcionara en los servidores firebase y el de clase de pruebas.\\
+* El programa no tiene horarios de uso.\\
+* Descripción de las operaciones a ser realizadas en pantalla\\
+* No recopila información personal de los usuarios que ya lo hayan ocupado.\\
+* Generación de Ticket de resultados\\
+* Mostrara un formulario simple\\
+* El programa se actualiza al momento de salir.\\
+
+\end{verse}
+
+\subsubsection{REQUERIMIENTOS FUNCIONALES Y NO FUNCIONALES}
+\begin{verse}
+\Large Requerimientos funcionales:	\\
+
+
+-Inicio de sesion con correo electronico\\
+
+
+-mostrar un mapa con informacion sobre el covid19\\
+
+
+-Que la base de datos guarde nombre de usuario y su contraseña para el inicio de sesion\\
+
+
+-Mostrar las estadisticas disponibles\\
+	
+
+-Mostrar cantidad de casos de contagio en el mapa\\
+
+
+-Generar sin problemas un mapa con la informacion de la base de datos del covid19\\
+
+
+Requerimientos no funcionales:\\
+
+
+-Adaptabilidad (Debe admitir la capacidad de trabajar con diferentes almacenes de datos)\\
+
+\end{verse}
+
+\subsubsection{INTERFAZ DEL SISTEMA}
+\begin{verse}
+
+\begin{figure}[h]
+     \includegraphics[scale=0.8]{IMAGEN1}
+     \caption{INTERFAZ}  
+\end{figure}
+\end{verse}
+
+\begin{figure}[h]
+     \includegraphics[scale=0.8]{IMAGEN2}
+     \caption{RESULTADOS}
+\end{figure}       
+
+
+
+\end{document}
