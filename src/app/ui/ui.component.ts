@@ -31,21 +31,6 @@ export class UiComponent implements OnInit {
   constructor(private usersService: UsersService,
     private storageService: StorageService) {
     this.diaActual = new Date();
-    try {
-      this.usersService.consultarUser(new ResponseUser).subscribe((data: any) => {
-        this.storageService.setSession("nombre", data.name);
-        this.storageService.setSession("id", data.id);
-        this.storageService.setSession("username", data.username);
-        this.storageService.setSession("email", data.email);
-        console.log(sessionStorage.getItem("nombre"));
-        console.log(sessionStorage.getItem("id"));
-        console.log(sessionStorage.getItem("username"));
-        console.log(sessionStorage.getItem("email"));
-      });
-    } catch (error) {
-
-    }
-
   }
   ngBeforeInit(): void {
   }
@@ -64,29 +49,49 @@ export class UiComponent implements OnInit {
       this.hombre = false;
     }
   }
-  clasificaciones(imc:number){
+
+  clasificaciones(imc: number) {
     try {
       return this.clasificacion = clasificacion(imc);
     } catch (error) {
-      
+
     }
   }
 
   calculos() {
-    this.imcLocal = imc(this.peso, this.altura);
-    if (this.hombre) {
-      this.pi = piH(this.altura);
+    if (this.peso == null || this.altura == null || this.edad == null) {
+      alert("Falta llenar datos");
     } else {
-      this.pi = piM(this.altura);
-    }
-    this.clasificacion = clasificacion(this.imcLocal);
-    try {
-      let imcnuevo = new ImcApi;
-      imcnuevo.iduser=Number.parseInt(sessionStorage.getItem("id"));
-      imcnuevo.imc=this.imcLocal;
-      this.usersService.nuevoImc(imcnuevo).subscribe(data => {        
-      });
-    } catch (error) {
+      this.peso=parseInt(this.peso);
+      this.altura=parseInt(this.altura);
+      this.edad=parseInt(this.edad);
+      try {
+        this.imcLocal = imc(this.peso, this.altura);
+        if (this.hombre) {
+          this.pi = piH(this.altura);
+        } else {
+          this.pi = piM(this.altura);
+        }
+        if (isNaN(this.peso)||isNaN(this.altura)||isNaN(this.edad)) {
+          this.peso=null;
+          this.edad=null;
+          this.altura=null;
+          alert("Datos introducidos inválidos. Asegurate de ingresar números.");
+        }else{
+          this.clasificacion = clasificacion(this.imcLocal);
+          location.href = sessionStorage.getItem("url").toString().slice(1, -1)+"#openModal";
+        }
+        try {
+          let imcnuevo = new ImcApi;
+          imcnuevo.iduser = Number.parseInt(sessionStorage.getItem("id"));
+          imcnuevo.imc = this.imcLocal;
+          this.usersService.nuevoImc(imcnuevo).subscribe(data => {
+          });
+        } catch (error) {
+        }
+      } catch (error) {
+        alert("Datos introducidos inválidos. Asegurate de ingresar números.");
+      }
     }
   }
 
