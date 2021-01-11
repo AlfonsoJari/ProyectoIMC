@@ -17,10 +17,10 @@
 
     <div id="openModal2" class="modalDialog">
         <div>
-            <a href="#close" title="Close" class="close">X</a>
+            <a href="" title="Close" class="close">X</a>
             <h2>Historial</h2>
             <div *ngFor="let imc of imcs">
-                {{imc.imc}}
+                IMC: {{imc.imc}}
                 <p>Estado : <span class="clasificacion()">
                         {{ clasificaciones(imc.imc) }}</span></p>
                 <p>-----------------------------------------------------------------------</p>
@@ -65,12 +65,12 @@
     </div>
 
     <div class="container">
-        <a class="boton_personalizado" (click)="calculos()" href="#openModal">Calcular</a>
+        <a class="boton_personalizado" (click)="calculos()">Calcular</a>
     </div>
 
     <div id="openModal" class="modalDialog">
         <div>
-            <a href="#close" title="Close" class="close">X</a>
+            <a href="" title="Close" class="close">X</a>
             <h2>Resultados IMC</h2>
             <p>Fecha: <span class="diaActual">{{ diaActual }}</span></p>
             <p>-----------------------------------------------------------------------</p>

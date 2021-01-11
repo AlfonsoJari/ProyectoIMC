@@ -51,17 +51,14 @@ export class UsersService {
       )
   }
 
-  signupUser(newUserApi): Observable<NewUserApi> {
+  signupUser(newUserApi) {
     this.httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     }
     console.log(JSON.stringify(newUserApi));
-    return this.http.post<NewUserApi>(this.apiURL + '/api/auth/signup', JSON.stringify(newUserApi), this.httpOptions)
-    .pipe(
-      retry(1)
-    )
+    return this.http.post(this.apiURL + '/api/auth/signup', JSON.stringify(newUserApi), this.httpOptions);
   }
 
   consultarImc(ResponseImc): Observable<any> {

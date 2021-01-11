@@ -19,7 +19,9 @@ export class LoginComponent implements OnInit {
   constructor(
     private usersService: UsersService,
 		private storageService: StorageService
-  ) { }
+  ) {
+    storageService.setSession("url",window.location.href.slice(0,-5))
+   }
 
   ngOnInit(): void {
   }

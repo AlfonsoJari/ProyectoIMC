@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NewUserApi } from '../models/newuserapi';
+import { UserApi } from '../models/userapi';
 import { StorageService } from '../services/storage.service';
 import { UsersService } from '../services/users.service';
 
@@ -32,11 +33,14 @@ export class SignupComponent implements OnInit {
     var mydata = new NewUserApi;
 
 
-    if (this.username == "" ||  this.password == "" ||  this.email == "" || this.name == "") {
+    if (this.username == "" || this.password == "" || this.email == "" || this.name == "") {
 
       alert('CAMPOS REQUERIDOS');
 
-    } else {
+    } else if (this.password.length <= 5) {
+      alert('Contraseña de 6 caracteres mínimo');
+    }
+    else {
 
       mydata.username = this.username;
       mydata.password = this.password;
@@ -44,14 +48,11 @@ export class SignupComponent implements OnInit {
       mydata.email = this.email;
       mydata.role = [];
       mydata.role.push("user");
-
       //alert(JSON.stringify(mydata));
-
       this.usersService.signupUser(mydata)
-        .subscribe((data: any) => {
+        .subscribe((data: string) => {
 
         })
-      alert('Añadido con exito');
       this.cadena = window.location.href;
       location.href = this.cadena.slice(0, -6);
     }
@@ -60,7 +61,7 @@ export class SignupComponent implements OnInit {
 
   redireccion() {
     this.cadena = window.location.href;
-    location.href = this.cadena.slice(0, -6)+'/login';
+    location.href = this.cadena.slice(0, -6) + '/login';
   }
 
 }
