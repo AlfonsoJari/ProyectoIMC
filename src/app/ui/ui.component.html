@@ -1,3 +1,5 @@
+<app-sessionbar></app-sessionbar>
+
 <!DOCTYPE html>
 <html>
 
@@ -9,6 +11,23 @@
 </head>
 
 <body>
+    <div class="container">
+        <a class="boton_personalizado" (click)="historial()" href="#openModal2">Historial</a>
+    </div>
+
+    <div id="openModal2" class="modalDialog">
+        <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <h2>Historial</h2>
+            <div *ngFor="let imc of imcs">
+                {{imc.imc}}
+                <p>Estado : <span class="clasificacion()">
+                        {{ clasificaciones(imc.imc) }}</span></p>
+                <p>-----------------------------------------------------------------------</p>
+            </div>
+        </div>
+    </div>
+
     <br>
     <div class="container">
         <label for="label">Calculadora de IMC</label>
@@ -17,7 +36,7 @@
     <div class="container">
         <label for="label">Hombre:</label>
         <label class="switch">
-            <input type="checkbox" (click)="cambioH()" id="switchH" [(ngModel)]="hombre" >
+            <input type="checkbox" (click)="cambioH()" id="switchH" [(ngModel)]="hombre">
             <span class="slider round"></span>
         </label>
     </div>
@@ -32,24 +51,24 @@
 
     <div class="container">
         <label for="edad">Edad: </label>
-        <input type="edad" name="edad" id="edad" [(ngModel)]="edad" placeholder=""/>
+        <input type="edad" name="edad" id="edad" [(ngModel)]="edad" placeholder="" />
     </div>
 
     <div class="container">
         <label for="altura">Altura(cm): </label>
-        <input type="altura" name="altura" id="altura" [(ngModel)]="altura" placeholder=""/>
+        <input type="altura" name="altura" id="altura" [(ngModel)]="altura" placeholder="" />
     </div>
 
     <div class="container">
         <label for="peso">Peso(kg): </label>
-        <input type="peso" name="peso" id="peso" [(ngModel)]="peso" placeholder=""/>
+        <input type="peso" name="peso" id="peso" [(ngModel)]="peso" placeholder="" />
     </div>
 
     <div class="container">
         <a class="boton_personalizado" (click)="calculos()" href="#openModal">Calcular</a>
     </div>
 
-    <div id="openModal" class="modalDialog"> 
+    <div id="openModal" class="modalDialog">
         <div>
             <a href="#close" title="Close" class="close">X</a>
             <h2>Resultados IMC</h2>
